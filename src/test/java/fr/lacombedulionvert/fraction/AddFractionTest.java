@@ -28,4 +28,13 @@ class AddFractionTest {
 
     assertThat(result).isEqualTo(oneOnTwo);
   }
+
+  @Test
+  void shouldReturnOneOnTwoWhenAddOneOnTwoToZero() {
+    Fraction oneOnTwo = new Fraction(1, 2);
+
+    Fraction result = new Fraction(0).add(oneOnTwo);
+
+    assertThat(result).isEqualTo(oneOnTwo);
+  }
 }
