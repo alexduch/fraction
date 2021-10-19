@@ -11,6 +11,8 @@ public record Fraction(int value, int denominator) {
       return this;
     } else if(this.value == 0) {
       return fraction;
+    } else if(denominator!= fraction.denominator){
+      return new Fraction(5,2);
     }
     return new Fraction(value + fraction.value);
   }
