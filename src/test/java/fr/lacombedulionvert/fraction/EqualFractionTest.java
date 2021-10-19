@@ -10,4 +10,9 @@ class EqualFractionTest {
   void shouldBeEqual() {
     assertThat(new Fraction(1)).isEqualTo(new Fraction(1));
   }
+
+  @Test
+  void shouldBeEqualWithDenominators() {
+    assertThat(new Fraction(1, 2)).isEqualTo(new Fraction(1, 2));
+  }
 }
