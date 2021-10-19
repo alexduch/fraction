@@ -35,6 +35,10 @@ class AddFractionTest {
 
   @Test
   void shouldReturnTwoWhenAddOneToOne() {
-    assertThat(new Fraction(1).add(new Fraction(1))).isEqualTo(new Fraction(2));
+    Fraction one = new Fraction(1);
+
+    Fraction result = one.add(one);
+
+    assertThat(result).isEqualTo(new Fraction(2));
   }
 }
