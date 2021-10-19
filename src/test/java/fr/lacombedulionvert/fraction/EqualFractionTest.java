@@ -17,7 +17,7 @@ class EqualFractionTest {
   }
 
   @Test
-  void test() {
+  void shouldHandleDefaultDenominator() {
     assertThat(new Fraction(5)).isEqualTo(new Fraction(5, 1));
   }
 }
