@@ -2,7 +2,11 @@ package fr.lacombedulionvert.fraction;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -48,8 +52,13 @@ class AddFractionTest {
     assertThat(result).isEqualTo(new Fraction(5, 2));
   }
 
-  @Test
-  void name() {
-    assertThat(new Fraction(1, 2).add(new Fraction(1, 3))).isEqualTo(new Fraction(5, 6));
+  @ParameterizedTest
+  @MethodSource("testData")
+  void name(Fraction left, Fraction right, Fraction expected) {
+    assertThat(left.add(right)).isEqualTo(expected);
+  }
+
+  static List<Arguments> testData() {
+    return List.of(Arguments.of(new Fraction(1, 2), new Fraction(1, 3), new Fraction(5, 6)));
   }
 }
