@@ -41,4 +41,9 @@ class AddFractionTest {
 
     assertThat(result).isEqualTo(new Fraction(2));
   }
+
+  @Test
+  void shouldBeEqual() {
+    assertThat(new Fraction(1)).isEqualTo(new Fraction(1));
+  }
 }
