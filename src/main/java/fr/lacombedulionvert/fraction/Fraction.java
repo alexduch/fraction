@@ -9,9 +9,11 @@ public record Fraction(int value, int denominator) {
   public Fraction add(Fraction fraction) {
     if(fraction.value == 0) {
       return this;
-    } else if(this.value == 0) {
+    }
+    if(this.value == 0) {
       return fraction;
-    } else if(denominator!= fraction.denominator){
+    }
+    if(denominator!= fraction.denominator){
       return new Fraction(5,2);
     }
     return new Fraction(value + fraction.value);
