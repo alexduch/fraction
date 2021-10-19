@@ -21,7 +21,11 @@ class AddFractionTest {
   }
 
   @Test
-  void test() {
-    assertThat(new Fraction(1, 2).add(new Fraction(0, 1))).isEqualTo(new Fraction(1, 2));
+  void shouldReturnOneOnTwoWhenAddZeroToOneOnTwo() {
+    Fraction oneOnTwo = new Fraction(1, 2);
+
+    Fraction result = oneOnTwo.add(new Fraction(0, 1));
+
+    assertThat(result).isEqualTo(oneOnTwo);
   }
 }
