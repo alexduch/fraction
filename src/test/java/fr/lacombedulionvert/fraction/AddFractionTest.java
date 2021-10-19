@@ -9,7 +9,8 @@ class AddFractionTest {
 
   @ParameterizedTest
   @CsvSource(value = {"0,0,0", "0,1,1", "1,0,1", "1,1,2", "-1,2,1"})
-  void shouldHandleFractionsAddition(int givenLeft, int givenRight, int expected) {
+  void shouldHandleFractionsAdditionWithDefaultDenominator(
+      int givenLeft, int givenRight, int expected) {
     Fraction left = new Fraction(givenLeft);
     Fraction right = new Fraction(givenRight);
 
