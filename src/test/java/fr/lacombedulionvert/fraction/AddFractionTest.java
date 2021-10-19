@@ -1,5 +1,6 @@
 package fr.lacombedulionvert.fraction;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -17,5 +18,10 @@ class AddFractionTest {
     Fraction result = left.add(right);
 
     assertThat(result).isEqualTo(new Fraction(expected));
+  }
+
+  @Test
+  void test() {
+    assertThat(new Fraction(1, 2).add(new Fraction(0, 1))).isEqualTo(new Fraction(1, 2));
   }
 }
