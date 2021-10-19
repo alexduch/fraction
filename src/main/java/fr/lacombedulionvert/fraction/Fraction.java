@@ -14,7 +14,8 @@ public record Fraction(int value, int denominator) {
       return fraction;
     }
     if(denominator!= fraction.denominator){
-      return new Fraction(5,2);
+      return new Fraction(value*fraction.denominator+fraction.value*denominator,
+              denominator*fraction.denominator);
     }
     return new Fraction(value + fraction.value);
   }
