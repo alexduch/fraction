@@ -4,20 +4,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class EqualFractionTest {
+class EqualSimpleFractionTest {
 
   @Test
   void shouldBeEqual() {
-    assertThat(new Fraction(1)).isEqualTo(new Fraction(1));
+    assertThat(new SimpleFraction(1)).isEqualTo(new SimpleFraction(1));
   }
 
   @Test
   void shouldBeEqualWithDenominators() {
-    assertThat(new Fraction(1, 2)).isEqualTo(new Fraction(1, 2));
+    assertThat(new SimpleFraction(1, 2)).isEqualTo(new SimpleFraction(1, 2));
   }
 
   @Test
   void shouldHandleDefaultDenominator() {
-    assertThat(new Fraction(5)).isEqualTo(new Fraction(5, 1));
+    assertThat(new SimpleFraction(5)).isEqualTo(new SimpleFraction(5, 1));
   }
 }
