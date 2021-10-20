@@ -16,19 +16,19 @@ class AddSimpleFractionTest {
   @CsvSource(value = {"0,0,0", "0,1,1", "1,0,1", "1,1,2", "-1,2,1"})
   void shouldHandleFractionsAdditionWithDefaultDenominator(
       int givenLeft, int givenRight, int expected) {
-    SimpleFraction left = new SimpleFraction(givenLeft);
+    Fraction left = new SimpleFraction(givenLeft);
     SimpleFraction right = new SimpleFraction(givenRight);
 
-    SimpleFraction result = left.add(right);
+    Fraction result = left.add(right);
 
     assertThat(result).isEqualTo(new SimpleFraction(expected));
   }
 
   @Test
   void shouldReturnOneOnTwoWhenAddZeroToOneOnTwo() {
-    SimpleFraction oneOnTwo = new SimpleFraction(1, 2);
+    Fraction oneOnTwo = new SimpleFraction(1, 2);
 
-    SimpleFraction result = oneOnTwo.add(new SimpleFraction(0, 1));
+    Fraction result = oneOnTwo.add(new SimpleFraction(0, 1));
 
     assertThat(result).isEqualTo(oneOnTwo);
   }
@@ -37,17 +37,17 @@ class AddSimpleFractionTest {
   void shouldReturnOneOnTwoWhenAddOneOnTwoToZero() {
     SimpleFraction oneOnTwo = new SimpleFraction(1, 2);
 
-    SimpleFraction result = new SimpleFraction(0).add(oneOnTwo);
+    Fraction result = new SimpleFraction(0).add(oneOnTwo);
 
     assertThat(result).isEqualTo(oneOnTwo);
   }
 
   @Test
   void shouldReturnFiveOnTwoWhenOneOnTwoPlusTwo() {
-    SimpleFraction left = new SimpleFraction(1, 2);
+    Fraction left = new SimpleFraction(1, 2);
     SimpleFraction right = new SimpleFraction(2, 1);
 
-    SimpleFraction result = left.add(right);
+    Fraction result = left.add(right);
 
     assertThat(result).isEqualTo(new SimpleFraction(5, 2));
   }
