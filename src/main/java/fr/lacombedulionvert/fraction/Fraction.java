@@ -1,7 +1,7 @@
 package fr.lacombedulionvert.fraction;
 
 public interface Fraction {
-  Fraction add(SimpleFraction simpleFraction);
+  Fraction add(Fraction simpleFraction);
 
   static Fraction of(int numerator, int denominator) {
     if (numerator == 0) {
